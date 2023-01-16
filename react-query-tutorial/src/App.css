@@ -1,0 +1,119 @@
+* {
+  margin : 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  --mainColor: tomato;
+  --secondColor: skyblue;
+  --thirdColor: brown;
+}
+.container-fluid {
+  width: 100%;
+  height: auto !important;
+  overflow-x: none !important;
+  overflow-y: auto !important;
+}
+.full-center {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+}
+.loading {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  animation: ring 2s linear infinite;
+  font-size: 40px;
+}
+.loading::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: inset 0 0 75px whitesmoke;
+}
+.loading::before {
+  content: '';
+  width: 9px;
+  height: 9px;
+  margin: 15px;
+  border-radius: 50%;
+  background-color: dimgray;
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 1px 4px 2px var(--mainColor);
+  }
+  50% {
+    transform: rotate(180deg);
+    box-shadow: 1px 4px 2px var(--secondColor);
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 1px 4px 2px var(--thirdColor);
+  }
+}
+
+.small-form {
+  width: clamp(300px, 200px, 400px);
+  box-shadow: inset 0 5px 20px whitesmoke, 0 2px 5px dimgray;
+  padding: 1.2rem;
+  border-radius: .3rem;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+input {
+  border: none !important;
+  box-shadow: 0 0 .1rem .1rem dimgray;
+  border-radius: .17rem;
+}
+input:hover {
+  box-shadow: 0 0 .1rem .1rem dimgray, 0 0 .15rem .15rem var(--mainColor);
+  animation: all .2s ease-in-out;
+}
+span {
+  font-size: 12px;
+  padding: 5px 2px 0 2px;
+  color: red;
+  display: none;
+}
+input:invalid[focused="true"] ~ span {
+  display: block;
+}
+/* input[type='submit']:hover {
+  box-shadow: 0 0 .1rem .1rem dimgray;
+  background-color: yellowgreen;
+} */
+
+.input input[type="text"], input[type="password"] {
+  width: 100%;
+  height: 35px;
+  margin-top: .2rem;
+  padding: 0 .5rem;
+}
+
+.small-form input[type="submit"] {
+  min-width: 130px;
+  min-height: 35px;
+  font-weight: 600;
+  background-color: var(--mainColor);
+  color: whitesmoke;
+  cursor: pointer;
+}

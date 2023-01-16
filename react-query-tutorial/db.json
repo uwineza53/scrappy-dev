@@ -1,0 +1,19 @@
+{
+    "developers": [
+        {
+            "name": "UWINEZA JOEL",
+            "email": "joel@test.com",
+            "git": "@test"
+        },
+        {
+            "name": "MANZI THIERY",
+            "email": "thiery@test.com",
+            "git": "@thiery"
+        },
+        {
+            "name": "MUNEZA JAMES",
+            "email": "james@test.com",
+            "git": "@james"
+        }
+    ]
+}
